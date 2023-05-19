@@ -11,4 +11,4 @@ class ProductoForm(forms.Form):
     nombre = forms.CharField(label='Nombre')
     precio = forms.IntegerField(label='Precio')    
     stock_actual = forms.IntegerField(label='Stock_actual') 
-    proveedor = forms.CharField(label='proveedor')
+    proveedor = forms.IntegerField(label='proveedor')
