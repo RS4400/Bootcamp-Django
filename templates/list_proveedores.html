@@ -1,0 +1,55 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+  <div class="container">
+
+    <h1>Lista de Proveedores</h1>
+
+    <div class="form-group mb-2 col col-lg-6">
+
+      <table class="center">
+
+        <thead>
+
+          <tr>
+            <th>Nombre del Proveedor</th>
+            <th>Apellido del proveedor</th>
+            <th>DNI</th>
+
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          {% for proveedor in proveedores %}
+
+          <tr>
+            
+            <td>{{ proveedor.nombre }}</td>
+
+            <td>{{ proveedor.apellido }}</td>
+
+            <td>{{ proveedor.dni }}</td>
+
+
+          </tr>
+
+          {% endfor %}
+
+        </tbody>
+
+      </table>
+
+      <br>
+
+      <a href="{{ '/create_proveedor' }}" class="button">Crear un Proveedor</a>
+      <a href="{{ '/list_productos' }}" class="button">Ir al listado de Productos</a>
+
+
+    </div>
+
+  </div>
+
+{% endblock %}

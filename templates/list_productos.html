@@ -1,0 +1,56 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+  <div class="container">
+
+    <h1>Lista de Productos</h1>
+
+    <div class="form-group mb-2 col col-lg-6">
+
+      <table class="center">
+
+        <thead>
+
+          <tr>
+            <th>Nombre del Producto</th>
+            <th>Precio</th>
+            <th>Stock Actual</th>
+            <th>Proveedor</th>
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          {% for producto in productos %}
+
+          <tr>
+            
+            <td>{{ producto.nombre }}</td>
+
+            <td>{{ producto.precio }}</td>
+
+            <td>{{ producto.stock_actual }}</td>
+
+            <td>{{ producto.proveedor }}</td>
+
+          </tr>
+
+          {% endfor %}
+
+        </tbody>
+
+      </table>
+
+      <br>
+
+      <a href="{{ '/create_producto' }}" class="button">Crear un Producto</a>
+      <a href="{{ '/list_proveedores' }}" class="button">Ir al Listado de Proveedores</a>
+
+
+    </div>
+
+  </div>
+
+{% endblock %}
